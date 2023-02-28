@@ -1,0 +1,31 @@
+{
+  "name": "raconte-js",
+  "version": "1.0.0",
+  "description": "Conférence Raconte-moi le JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "check": "npm run es6 & npm run es5 & npm run es3",
+    "es3": "echo ES3 && es-check es3 *.js",
+    "es5": "echo ES5 && es-check es5 *.js",
+    "es6": "echo ES6 / ES2015 && es-check es2015 *.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TripX/raconte-js.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Histoire"
+  ],
+  "author": "Bastien Rousseau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TripX/raconte-js/issues"
+  },
+  "homepage": "https://github.com/TripX/raconte-js#readme",
+  "devDependencies": {
+    "es-check": "^7.1.0"
+  }
+}
