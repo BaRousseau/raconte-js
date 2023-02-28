@@ -29,21 +29,7 @@ echo /node_modules > .gitignore
 npm init
 ```
 
-Le fichier package.json créé ressemble à ça :
-
-```json
-{
-  "name": "mon-super-projet",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Bastien Rousseau",
-  "license": "ISC"
-}
-```
+Le fichier package.json a été créé.
 
 ## (Optionel) Configuration de npm pour ce projet
 
@@ -86,9 +72,9 @@ Le fichier package.json ressemble à ça :
 
 ```json
 {
-  "name": "mon-super-projet",
+  "name": "raconte-js",
   "version": "1.0.0",
-  "description": "",
+  "description": "Conférence Raconte-moi le JavaScript",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -98,8 +84,20 @@ Le fichier package.json ressemble à ça :
     "es6": "echo ES6 / ES2015 && es-check es2015 *.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TripX/raconte-js.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Histoire"
+  ],
   "author": "Bastien Rousseau",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TripX/raconte-js/issues"
+  },
+  "homepage": "https://github.com/TripX/raconte-js#readme",
   "devDependencies": {
     "es-check": "^7.1.0"
   }
@@ -165,10 +163,16 @@ window.onload = function () {
 }
 ```
 
-Tester avec et sans `onload`.
+Tester dans un navigateur avec et sans `onload`.
+
+Avec une URL de ce type dans un onglet de navigateur : file:///d:/sandbox/raconte-js/index.html
 
 ## Démontrer que l'objet window n'existe pas dans Node
 
 ```shell
 npm run start
 ```
+
+## La suite avec Space Invader
+
+- Voir le fichier space-invader-es3.md
