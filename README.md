@@ -3,7 +3,7 @@
 ## Pré-requis
 
 - NodeJS contenant npm
-- (Optionel) Git
+- (Optionnel) Git
 
 ## Création du projet
 
@@ -173,6 +173,6 @@ Avec une URL de ce type dans un onglet de navigateur : file:///d:/sandbox/racont
 npm run start
 ```
 
-## La suite avec Space Invader
+## Evolution de l'EcmaScript
 
-- Voir le fichier space-invader-es3.md
+[Evolution de l'EcmaScript](/evolution-es.md)
