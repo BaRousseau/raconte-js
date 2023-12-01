@@ -12,8 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TripX/raconte-js.git"
+    "type": "git"
   },
   "keywords": [
     "JavaScript",
@@ -21,10 +20,6 @@
   ],
   "author": "Bastien Rousseau",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TripX/raconte-js/issues"
-  },
-  "homepage": "https://github.com/TripX/raconte-js#readme",
   "devDependencies": {
     "es-check": "^7.1.0"
   }

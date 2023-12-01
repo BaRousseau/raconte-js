@@ -31,7 +31,7 @@ npm init
 
 Le fichier package.json a été créé.
 
-## (Optionel) Configuration de npm pour ce projet
+## (Optionnel) Configuration de npm pour ce projet
 
 ```cmd
 // Création du fichier .npmrc
@@ -85,8 +85,7 @@ Le fichier package.json ressemble à ça :
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TripX/raconte-js.git"
+    "type": "git"
   },
   "keywords": [
     "JavaScript",
@@ -94,10 +93,6 @@ Le fichier package.json ressemble à ça :
   ],
   "author": "Bastien Rousseau",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TripX/raconte-js/issues"
-  },
-  "homepage": "https://github.com/TripX/raconte-js#readme",
   "devDependencies": {
     "es-check": "^7.1.0"
   }
@@ -173,6 +168,10 @@ Avec une URL de ce type dans un onglet de navigateur : file:///d:/sandbox/racont
 npm run start
 ```
 
-## Evolution de l'EcmaScript
+## Résultat
 
-[Evolution de l'EcmaScript](/evolution-es.md)
+Retrouver l'ensemble de ces actions sur la branche `step/1`.
+
+## La suite
+
+La suite est sur la branche `step/2`.
