@@ -4,7 +4,8 @@
   "description": "Conférence Raconte-moi le JavaScript",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "serve .",
+    "launch": "node index.js",
     "check": "npm run es6 & npm run es5 & npm run es3",
     "es3": "echo ES3 && es-check es3 *.js",
     "es5": "echo ES5 && es-check es5 *.js",
@@ -21,6 +22,7 @@
   "author": "Bastien Rousseau",
   "license": "ISC",
   "devDependencies": {
-    "es-check": "^7.1.0"
+    "es-check": "^7.1.0",
+    "serve": "^14.2.1"
   }
 }
