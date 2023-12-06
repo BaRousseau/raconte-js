@@ -1,5 +1,5 @@
 window.onload = function () {
-  var canvas = document.getElementById("game-canvas");
+  var canvas = document.getElementById("playground");
   var ctx = canvas.getContext("2d");
 
   // Player
