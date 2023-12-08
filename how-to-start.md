@@ -1,5 +1,7 @@
 # How to start ?
 
+Sources : <https://webreference.com/javascript/basics/versions/#introduction>
+
 ```bash
 mkdir es-evol
 ls es-evol
@@ -254,7 +256,9 @@ La balise HTML script accepte defer / async en attribut (2010 = Chrome 8)
 <script defer src="./index.js"></script>
 ```
 
-## "use strict"
+## Les nouveautés
+
+- "use strict"
 
 Au revoir variable non défini correctement.
 
@@ -262,6 +266,32 @@ Au revoir variable non défini correctement.
 "use strict";
 var canvas = document.getElementById("playground");
 ```
+
+- "use strict"
+- String[number] access
+- Multiline strings
+- String.trim()
+- Array.isArray()
+- Array forEach()
+- Array map()
+- Array filter()
+- Array reduce()
+- Array reduceRight()
+- Array every()
+- Array some()
+- Array indexOf()
+- Array lastIndexOf()
+- JSON.parse()
+- JSON.stringify()
+- Date.now()
+- Date toISOString()
+- Date toJSON()
+- Property getters and setters
+- Reserved words as property names
+- Object methods
+- Object defineProperty()
+- Function bind()
+- Trailing commas
 
 ## ES6 ou ES2015
 
@@ -273,7 +303,196 @@ var canvas = document.getElementById("playground");
 - Classes
 - Default Parameters
 - Destructuring
-- Let and Const
 - Maps
 - Sets
 - Template Literals
+
+```js
+// Example of let and const in ES6
+let name = "John Doe";
+const age = 30;
+
+// Example of arrow function in ES6
+let add = (a, b) => a + b;
+console.log(add(1, 2)); // Output: 3
+
+// Example of template literals in ES6
+let message = `Hello, ${name}!`;
+console.log(message); // Output: "Hello, John Doe!"
+
+// Example of class in ES6
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    return `Hello, ${this.name}!`;
+  }
+}
+let john = new Person("John Doe", 30);
+console.log(john.greet()); // Output: "Hello, John Doe!"
+```
+
+## ES2016
+
+```js
+// Example of exponentiation operator in ES7
+let square = 2 ** 2;
+console.log(square); // Output: 4
+
+// Example of Array.prototype.includes in ES7
+let numbers = [1, 2, 3, 4, 5];
+console.log(numbers.includes(3)); // Output: true
+```
+
+## ES2017
+
+```js
+// Example of async/await in ES8
+async function fetchData() {
+  let response = await fetch("https://api.example.com/data");
+  let data = await response.json();
+  return data;
+}
+
+// Example of Object.values() and Object.entries() in ES8
+let person = { name: "John Doe", age: 30 };
+console.log(Object.values(person)); // Output: ["John Doe", 30]
+console.log(Object.entries(person)); // Output: [["name", "John Doe"], ["age", 30]]
+
+// Example of string padding in ES8
+let text = "Hello";
+console.log(text.padStart(10, "-")); // Output: "-----Hello"
+console.log(text.padEnd(10, "-")); // Output: "Hello-----"
+```
+
+## ES2018
+
+```js
+// Example of asynchronous iteration in ES9
+async function asyncIterable() {
+  let iterable = {
+    [Symbol.asyncIterator]() {
+      let i = 0;
+      return {
+        next() {
+          if (i < 3) {
+            return Promise.resolve({ value: i++, done: false });
+          }
+          return Promise.resolve({ done: true });
+        },
+      };
+    },
+  };
+
+  for await (let value of iterable) {
+    console.log(value); // Output: 0, 1, 2
+  }
+}
+
+// Example of Promise.prototype.finally() in ES9
+fetch("https://api.example.com/data")
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error))
+  .finally(() => console.log("Finished!"));
+
+// Example of rest/spread operators in ES9
+let person = { name: "John Doe", age: 30, country: "USA" };
+let { name, ...rest } = person;
+console.log(name); // Output: "John Doe"
+console.log(rest); // Output: { age: 30, country: "USA" }
+```
+
+## ES2019
+
+```js
+// Example of Array.prototype.flat() and Array.prototype.flatMap() in ES10
+let array = [1, 2, [3, 4]];
+console.log(array.flat()); // Output: [1, 2, 3, 4]
+
+let numbers = [1, 2, 3, 4];
+console.log(numbers.flatMap((x) => [x, x * 2])); // Output: [1, 2, 2, 4, 3, 6, 4, 8]
+
+// Example of Object.fromEntries() in ES10
+let entries = [
+  ["name", "John Doe"],
+  ["age", 30],
+];
+console.log(Object.fromEntries(entries)); // Output: { name: "John Doe", age: 30 }
+```
+
+## ES2020
+
+```js
+// Example of globalThis in ES11
+console.log(globalThis); // Output: Window {...}
+
+// Example of private fields in ES11
+class Person {
+  #name = "John Doe";
+  #age = 30;
+
+  getName() {
+    return this.#name;
+  }
+
+  getAge() {
+    return this.#age;
+  }
+}
+
+let person = new Person();
+console.log(person.getName()); // Output: "John Doe"
+console.log(person.getAge()); // Output: 30
+
+// Example of nullish coalescing in ES11
+let value = null;
+console.log(value ?? "default"); // Output: "default"
+```
+
+## ES2021
+
+```js
+// Example of Logical Assignment Operators in ES12
+let a = 0,
+  b = 1;
+a &&= b;
+console.log(a); // Output: 0
+a ||= b;
+console.log(a); // Output: 1
+a &&= b;
+console.log(a); // Output: 1
+
+// Example of Numeric Separators in ES12
+let billion = 1_000_000_000; // This is equivalent to let billion = 1000000000;
+console.log(billion); // Output: 1000000000
+
+// Example of Promise.any() in ES12
+let promises = [Promise.reject("1"), Promise.resolve("2"), Promise.reject("3")];
+Promise.any(promises)
+  .then((value) => console.log(value)) // Output: "2"
+  .catch((error) => console.log(error));
+
+// Example of String.prototype.replaceAll() in ES12
+let string = "foo foo foo";
+console.log(string.replaceAll("foo", "bar")); // Output: "bar bar bar"
+```
+
+## ES2022
+
+- The ability to use top-level await, making it possible to use the keyword outside of an async function
+- New class elements: private and public instance fields, private and public static fields, private instance methods and accessors, and private static methods and accessors
+- The ability to use static blocks inside classes, which allows for per-class evaluation initialization
+- The #x in obj syntax which allows you to test for the presence of private fields on objects
+- Regular expression match indices via the /d flag, which provides start and end - indices for matched substrings
+- The cause property on Error objects, that can be used to record a causation chain in errors
+- The at method for Strings, Arrays, and TypedArrays, which allows relative indexing
+- Object.hasOwn, a convenient alternative to Object.prototype.hasOwnProperty
+
+<https://dev.to/brayanarrieta/new-javascript-features-ecmascript-2022-with-examples-4nhg>
+
+## ES2023
+
+<https://webreference.com/javascript/basics/versions/#ecma-script-2023-es-14>
